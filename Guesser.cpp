@@ -16,7 +16,6 @@ using std::string;
 */
 unsigned int Guesser::distance(string guess){
   int distance = 0;
-  return distance;
   int i = 0;
   int j = 0;
   while(i <= guess.length() && j <= m_secret.length()){
@@ -33,6 +32,8 @@ unsigned int Guesser::distance(string guess){
   else if(j <= m_secret.length()){
     distance += std::min(m_secret.length(), m_secret.length() - guess.length());
   }
+
+  return distance;
 }
 
 /*
@@ -67,7 +68,7 @@ bool Guesser::match(string guess){
     return false;
   }
 
-  if (m_secret == guess) {
+  else if (m_secret == guess) {
     m_remaining = 3;
     return true;
   }
